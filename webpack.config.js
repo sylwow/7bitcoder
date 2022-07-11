@@ -12,6 +12,8 @@ const config = {
     path: path.resolve(__dirname, "dist"),
   },
   devServer: {
+    liveReload: true,
+    watchFiles: ['src/**', 'styles/**', 'index.html'],
     open: true,
     host: "localhost",
   },
@@ -32,7 +34,7 @@ const config = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: ["css-loader", "sass-loader"],
+        use: ['style-loader', "css-loader", "sass-loader"],
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
