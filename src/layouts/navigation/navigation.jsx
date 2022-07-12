@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import logo from "../../assets/7bitcoder-logo.svg";
 import PositionService from "../../services/position.service";
 import "./navigation.scss";
@@ -6,12 +6,23 @@ import "./navigation.scss";
 export default class Navigation extends React.Component {
   state = {
     shrink: false,
+    elements: [
+      { name: "Natous", active: false },
+      { name: "Natous2", active: false },
+      { name: "Natous3", active: false },
+      { name: "Natous4", active: false },
+      { name: "Natous5", active: false },
+    ],
   };
 
   constructor(props) {
     super(props);
-    PositionService.leftHeader.subscribe((shrink) =>
-      this.changeNavigationSize(shrink)
+    this.subscribe();
+  }
+
+  subscribe() {
+    PositionService.isOnTop.subscribe((isOnTop) =>
+      this.changeNavigationSize(!isOnTop)
     );
   }
 
@@ -19,40 +30,46 @@ export default class Navigation extends React.Component {
     this.setState({ shrink });
   }
 
+  navigate(element) {
+    this.selectNavigationElement(element);
+  }
+
+  selectNavigationElement(element) {
+    this.setState(({ elements: oldElements }) => {
+      const newElements = [...oldElements].map((e) => ({
+        ...e,
+        active: false,
+      }));
+      const selected = newElements.find((e) => e.name === element.name);
+      selected.active = true;
+      return { elements: newElements };
+    });
+  }
+
   render() {
     return (
       <div className={`navigation ${this.state.shrink ? "shrink" : ""}`}>
-        <input id="navi-toggle" type="checkbox" class="navigation__checkbox" />
-        <label for="navi-toggle" class="navigation__button">
-          <span class="navigation__icon">&nbsp;</span>
+        <input
+          id="navi-toggle"
+          type="checkbox"
+          className="navigation__checkbox"
+        />
+        <label htmlFor="navi-toggle" className="navigation__button">
+          <span className="navigation__icon">&nbsp;</span>
         </label>
-        <img src={logo} class="navigation__logo" alt="logo" />
-        <nav class="navigation__nav">
-          <ul class="navigation__list">
-            <li class="navigation__item">
-              <span class="navigation__link active"> Natous</span>
-            </li>
-            <li class="navigation__item">
-              <span class="navigation__link"> Your benefits</span>
-            </li>
-            <li class="navigation__item">
-              <span href="#" class="navigation__link">
-                {" "}
-                Popular tours
-              </span>
-            </li>
-            <li class="navigation__item">
-              <span href="#" class="navigation__link">
-                {" "}
-                Stories
-              </span>
-            </li>
-            <li class="navigation__item">
-              <span href="#" class="navigation__link">
-                {" "}
-                Book now
-              </span>
-            </li>
+        <img src={logo} className="navigation__logo" alt="logo" />
+        <nav className="navigation__nav">
+          <ul className="navigation__list">
+            {this.state.elements.map((e) => (
+              <li key={e.name} className="navigation__item">
+                <span
+                  className={`navigation__link ${e.active ? "active" : ""}`}
+                  onClick={() => this.navigate(e)}
+                >
+                  {e.name}
+                </span>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>

@@ -1,13 +1,22 @@
-import React from "react";
-import { Subject } from "rxjs";
+import { map, BehaviorSubject, fromEvent } from "rxjs";
 
 class PositionService {
-    position = new Subject();
+    #position = new BehaviorSubject();
 
-    leftHeader = this.position.asObservable();
+    isOnTop = this.#position
+        .pipe(map(pos => pos < 20))
+        .asObservable();
+
+    get position() { return this.#position.value; }
 
     constructor() {
-        setTimeout(() => { this.position.next(true) }, 2000)
+        this.#subscribeToPositionChange();
+    }
+
+    #subscribeToPositionChange() {
+        fromEvent(window, 'scroll')
+            .pipe(map(_ => window.scrollY))
+            .subscribe(pos => this.#position.next(pos));
     }
 }
 
