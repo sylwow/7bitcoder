@@ -1,7 +1,9 @@
 import React from "react";
-import logo from "../../assets/7bitcoder-logo.svg";
+import { map } from "rxjs";
+import logo from "../../assets/images/7bitcoder-logo.svg";
 import PositionService from "../../services/position.service";
 import "./navigation.scss";
+import ScrollProgress from "../scrollProgress/scrollProgress";
 
 export default class Navigation extends React.Component {
   state = {
@@ -21,9 +23,9 @@ export default class Navigation extends React.Component {
   }
 
   subscribe() {
-    PositionService.isOnTop.subscribe((isOnTop) =>
-      this.changeNavigationSize(!isOnTop)
-    );
+    PositionService.positionPercnet$
+      .pipe(map((pos) => pos < 0.05))
+      .subscribe((isOnTop) => this.changeNavigationSize(!isOnTop));
   }
 
   changeNavigationSize(shrink) {
@@ -72,6 +74,7 @@ export default class Navigation extends React.Component {
             ))}
           </ul>
         </nav>
+        <ScrollProgress className="scroll-progress" />
       </div>
     );
   }

@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/images/logo.svg';
 import { Particles } from '../../components/particles/particles';
 import './Home.css';
 

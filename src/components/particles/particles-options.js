@@ -42,7 +42,7 @@ export const options = {
             },
             "onHover": {
                 "enable": true,
-                "mode": "grab",
+                "mode": "push",
                 "parallax": {
                     "enable": true,
                     "force": 60,

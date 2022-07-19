@@ -1,0 +1,166 @@
+[
+    {
+        "id": 1,
+		"date": "01.2020",
+        "name": "Engineering-Thesis",
+        "description": "The purpose of this project was to build a system that allows users to control the Arlo mobile robot using static hand gestures, with the use of a camera. The project consists of three parts, the first was to develop a script in Python that supposed to recognize the gestures controlling the robot. For this purpose, I used a convolutional neural network (PyTorch library), which had to be properly trained. The next step was to create a robot program in C++ language that had to properly react to application commands. The last step was to handle communication between programs, Bluetooth 4.0 Low Energy standard was used for this purpose. Unfortunately, during the final control test Bluetooth module has been damaged, in this case, I decided to use simple serial communication instead. The main assumptions of the project were to achieve a real-time processing system and achieve high accuracy of hand gesture recognition. More information on my GitHub site",
+        "imageLink": "https://www.youtube.com/embed/j6qOpACT1z0",
+        "githubLink": "https://github.com/sylwow/Engineering-Thesis",
+        "requirements": "",
+        "downloads": [],
+        "tools": [
+            {
+                "description": "Python Language",
+                "img": "../assets/images/pythonLogo.png"
+            },
+            {
+                "description": "C++ Language",
+                "img": "../assets/images/c++logo.png"
+            },
+            {
+                "description": "PyCharm IDE",
+                "img": "../assets/images/pcLogo.png"
+            },
+            {
+                "description": "Pytorch deeplearning library",
+                "img": "../assets/images/pytorchLogo.png"
+            },
+            {
+                "description": "PyQt5 python binding of qt framerowk",
+                "img": "../assets/images/qtLogo.png"
+            },
+            {
+                "description": "Bluetooth low energy standard",
+                "img": "../assets/images/bleLogo.png"
+            }
+        ]
+    },
+    {
+        "id": 2,
+		"date": "07.2020",
+        "name": "SharpsenBox",
+        "description": "SharpsenBox is a small system designed for game developers who want to have a custom game launcher with an auto-updating system. SharpsenBox contains a launcher (called SharpsenBox) and patcher, so during your game development you can create new game patches and releases them using this system, the launcher will update games automatically. SharpsenBox is also self-updating when a new version is released it will automatically update at application startup. Main problems are solved such as version checking, reading your game website, the system is flexible and customizable, you can write your own 'game page' which presents your game. SharpsenBox is written in qt-qml/c++ so program is multiplatform. Every computation is processed on the client-side so there is no need for any servers. Because of that releasing process is a bit complicated I've posted on youtube a video that describes all steps needed to publish the game from beginning to the end, more details, and links on my GitHub site. The video presents Launcher used to publish my game called 'Sylio'",
+        "imageLink": "https://www.youtube.com/embed/IHhCmWrRuaU",
+        "githubLink": "https://github.com/sylwow/SharpsenBox",
+        "requirements": "Windows 64 bit, dont install it in Program Files /77MB",
+        "downloads": [
+            {
+                "platform": "win",
+                "link": "https://onedrive.live.com/download?cid=607F7FD0AF3C1C7E&resid=607F7FD0AF3C1C7E%211986&authkey=APfI9-j_t8iOyXY"
+            }
+        ],
+        "tools": [
+            {
+                "description": "C++ Language",
+                "img": "../assets/images/c++logo.png"
+            },
+            {
+                "description": "C# Language",
+                "img": "../assets/images/cSharpLogo.png"
+            },
+            {
+                "description": "Visual studio IDE",
+                "img": "../assets/images/vsLogo.png"
+            },
+            {
+                "description": "Qt framework",
+                "img": "../assets/images/qtLogo.png"
+            },
+            {
+                "description": "Cmake build tool",
+                "img": "../assets/images/cmakeLogo.png"
+            }
+        ]
+    },
+    {
+        "id": 3,
+		"date": "03.2020",
+        "name": "MacroFlow",
+        "description": "MacroFlow is a simple tool to create macros. Macro is a text file that contains instructions/commands, each of them is described on my GitHub site. For example, you can write macro that copies some text, moves the mouse cursor on top of the screen, and pastes it there. Macros can have simple control flow instructions (if, while), arithmetic (+,-,/,*), and variables. Due to simplicity, you can create macros very quickly. You can assign a keyboard shortcut to the macro, and when you switch the program to a listening state, MacroFlow will wait for you to trigger the macro with the right hotkey when the macro is triggered again while is under execution, the script is terminated. The number of macros the program can listen to is unlimited. Program is written in java with JavaFX GUI library",
+        "imageLink": "https://www.youtube.com/embed/-p24Ygm_fNU",
+        "githubLink": "https://github.com/sylwow/MacroFLow",
+        "requirements": "Java 11 runtime environmet /34MB",
+        "downloads": [
+            {
+                "platform": "win",
+                "link": "https://onedrive.live.com/download?cid=607F7FD0AF3C1C7E&resid=607F7FD0AF3C1C7E%211984&authkey=AECnQ4gIjsyQjFM"
+            },
+			{
+                "platform": "linux",
+                "link": "https://onedrive.live.com/download?cid=607F7FD0AF3C1C7E&resid=607F7FD0AF3C1C7E%211995&authkey=AImkuy2PWlcCqLE"
+            }
+        ],
+        "tools": [
+            {
+                "description": "Java Language",
+                "img": "../assets/images/javaLogo.png"
+            },
+            {
+                "description": "Intellij IDE",
+                "img": "../assets/images/ijLogo.png"
+            },
+            {
+                "description": "JavaFx gui library",
+                "img": "../assets/images/JavaFXLogo.png"
+            }
+        ]
+    },
+    {
+        "id": 4,
+		"date": "8.2019",
+        "name": "Sylio",
+        "description": "Sylio is a simple multiplayer desktop game written in C++/Sfml, players control snail and try to survive as long as it is possible, using various powerups and collecting points. In the game, you can change music settings choose your nickname, controls and change the number of rounds.",
+        "imageLink": "https://www.youtube.com/embed/T5zxTI1gxOQ",
+        "githubLink": "https://github.com/sylwow/Sylio",
+        "requirements": "Windows 32 bit /44MB",
+        "downloads": [
+            {
+                "platform": "win",
+                "link": "https://onedrive.live.com/download?cid=607F7FD0AF3C1C7E&resid=607F7FD0AF3C1C7E%211985&authkey=AG1XNU5p9KW3s70"
+            }
+        ],
+        "tools": [
+            {
+                "description": "C++ Language",
+                "img": "../assets/images/c++logo.png"
+            },
+            {
+                "description": "Visual studio IDE",
+                "img": "../assets/images/vsLogo.png"
+            },
+            {
+                "description": "SFML graphical library",
+                "img": "../assets/images/sfmlLogo.png"
+            }
+        ]
+    },
+    {
+        "id": 5,
+		"date": "10.2019",
+        "name": "Cards-against-the-world",
+        "description": "Online card game for up to eight players in one party. The game is simple, each round one player asks a question from a black card, and everyone else answers with their funniest white card using voice communicator eg discord. Desktop application is built with c++/sfml and connects with c++/winsocket server. Backend is a multithread server, each thread represents game lobby and handles things like game states, executing commands, exchanging data between players, checking if players are still connected, etc. Each lobby has its own thread that handles Unicode game chat. The server is simply secured, you need to send specific code to get access. To run the server program I used Amazon AWS it provides free cloud computing, within you can set up a small windows server. Currently, there is only one deck available \"Talia Rocka PL\"",
+        "imageLink": "https://www.youtube.com/embed/4wimV6D_EXo",
+        "githubLink": "https://github.com/sylwow/Cards-against-the-world",
+        "requirements": "Windows 32 bit, server is currently unavailable /21MB",
+        "downloads": [
+            {
+                "platform": "win",
+                "link": "https://onedrive.live.com/download?cid=607F7FD0AF3C1C7E&resid=607F7FD0AF3C1C7E%211983&authkey=AIkHyyZfwj22W9U"
+            }
+        ],
+        "tools": [
+            {
+                "description": "C++ Language",
+                "img": "../assets/images/c++logo.png"
+            },
+            {
+                "description": "Visual studio IDE",
+                "img": "../assets/images/vsLogo.png"
+            },
+            {
+                "description": "SFML graphical library",
+                "img": "../assets/images/sfmlLogo.png"
+            }
+        ]
+    }
+]
